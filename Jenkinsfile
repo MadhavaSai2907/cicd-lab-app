@@ -12,17 +12,17 @@ pipeline {
         APP_NAME = 'cicd-lab-app'
         PYTHON_ENV = 'test'
     }
+    
+    
     stages {
-        stage('Hello from Agent') {
+	stage('Hello from Agent') {
             steps {
                 echo "Running on: ${env.NODE_NAME}"
                 sh 'hostname'
             }
         }
-    }
-    stages {
         stage('Checkout') {
-            steps {
+	    steps {
                 echo "=========================================="
                 echo " Building: ${env.JOB_NAME} #${env.BUILD_NUMBER}"
                 echo " Branch:   ${env.GIT_BRANCH}"
