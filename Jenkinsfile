@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+     agent { label 'linux' }
 
     options {
         buildDiscarder(logRotator(numToKeepStr: '10'))
@@ -12,7 +12,14 @@ pipeline {
         APP_NAME = 'cicd-lab-app'
         PYTHON_ENV = 'test'
     }
-
+    stages {
+        stage('Hello from Agent') {
+            steps {
+                echo "Running on: ${env.NODE_NAME}"
+                sh 'hostname'
+            }
+        }
+    }
     stages {
         stage('Checkout') {
             steps {
