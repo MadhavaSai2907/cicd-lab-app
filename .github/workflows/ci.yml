@@ -92,7 +92,6 @@ jobs:
           echo "**Commit:** \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
       
       - name: Notify on failure
-        if: failure()
         run: |
         echo "printing Webhook url: \ `${{ secrets.SLACK_WEBHOOK_URL }}\`" >> $GITHUB_STEP_SUMMARY
           # curl -X POST ${{ secrets.SLACK_WEBHOOK_URL }} \
