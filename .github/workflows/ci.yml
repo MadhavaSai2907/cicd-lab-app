@@ -93,7 +93,7 @@ jobs:
       
       - name: Notify on failure
         run: |
-        echo "printing Webhook url: \ `${{ secrets.SLACK_WEBHOOK_URL }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "printing Webhook url: \ `${{ secrets.SLACK_WEBHOOK_URL }}\`" >> $GITHUB_STEP_SUMMARY
           # curl -X POST ${{ secrets.SLACK_WEBHOOK_URL }} \
           #   -H 'Content-type: application/json' \
           #   --data '{"text":" CI failed on ${{ github.repository }} branch ${{ github.ref_name }}"}'
